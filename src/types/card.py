@@ -19,7 +19,7 @@ class BlankCard(Card):
 
 
 class DisplayBlankCard:
-    def __init__(self, blank: BlankCard, fills: list[FillCard | None]):
+    def __init__(self, blank: BlankCard, fills: list[FillCard]):
         assert blank.text.count("_") == len(fills)  # TODO move check
         self.blank = blank
         self.fills = fills
