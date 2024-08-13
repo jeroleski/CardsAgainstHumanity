@@ -1,12 +1,14 @@
-from __future__ import annotations
 from src.types.card import FillCard
 
 
 class Player:
-    def __init__(self, name: str, fills: list[FillCard]):
+    def __init__(self, name: str):
         self.name = name
-        self.fills = fills
+        self.fills: list[FillCard] = []
         self.points: int = 0
+
+    def __hash__(self):  # TODO what if players have the same name?
+        return hash(self.name)
 
     def choose_fills(self) -> list[FillCard]:
         print(f"{self.name} - choose cards from:")

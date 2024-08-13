@@ -2,6 +2,9 @@ class Card:
     def __init__(self, text: str):
         self.text = text
 
+    def __eq__(self, other) -> bool:  # TODO use dataclass
+        return isinstance(other, Card) and self.text == other.text
+
     def __repr__(self):
         return self.text
 

@@ -24,10 +24,12 @@ def read_player_names() -> list[str]:
     return line
 
 
-def setup_game() -> Game:
+def setup_game() -> Game:  # TODO remove func
     blanks, fills = parse_cards("./src/data/blank_cards.txt", "./src/data/fill_cards.txt")
     players = []
     for name in read_player_names():
+        p = Player(name)
+        players.append(p)
         cards = [fills.pop() for _ in range(5)]  # TODO change num
-        players.append(Player(name, cards))
+        p.cards = cards
     return Game(players, blanks, fills)
