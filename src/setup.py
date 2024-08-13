@@ -7,11 +7,11 @@ from src.types.player import Player
 
 def parse_cards(blank_path: str, fill_path: str) -> tuple[list[BlankCard], list[FillCard]]:
     with open(blank_path) as file:
-        blanks = [BlankCard(s) for s in file]
+        blanks = [BlankCard(s.strip()) for s in file]
     shuffle(blanks)
 
     with open(fill_path) as file:
-        fills = [FillCard(s) for s in file]
+        fills = [FillCard(s.strip()) for s in file]
     shuffle(fills)
 
     return blanks, fills

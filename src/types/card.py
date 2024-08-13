@@ -1,6 +1,3 @@
-from __future__ import annotations
-
-
 class Card:
     def __init__(self, text: str):
         self.text = text
@@ -13,16 +10,16 @@ class FillCard(Card):
     pass
 
 
-class BlankCard(Card):
-    def fill(self, blanks: list[FillCard]) -> DisplayBlankCard:
-        return DisplayBlankCard(self, blanks)
-
-
-class DisplayBlankCard:
-    def __init__(self, blank: BlankCard, fills: list[FillCard]):
-        assert blank.text.count("_") == len(fills)  # TODO move check
-        self.blank = blank
+class DisplayBlankCard(Card):
+    def __init__(self, text: str, fills: list[FillCard]):
+        super().__init__(text)
+        assert text.count("_") == len(fills)  # TODO move check
         self.fills = fills
 
     def __repr__(self):
-        return self.blank.text.replace("_", "{}").format(*self.fills)
+        return self.text.replace("_", "{}").format(*self.fills)
+
+
+class BlankCard(Card):
+    def fill(self, fills: list[FillCard]) -> DisplayBlankCard:
+        return DisplayBlankCard(self.text, fills)

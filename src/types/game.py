@@ -1,7 +1,7 @@
 import itertools
 
 from src.types.player import Player
-from src.types.card import BlankCard, FillCard, DisplayBlankCard
+from src.types.card import BlankCard, FillCard
 
 
 class Game:
@@ -23,18 +23,14 @@ class Game:
         print("Blank card is:")
         print(curr_blank)
 
-        all_choices = []
-        for p in self.players:
-            if p == curr_czar:
-                continue
-            else:
-                all_choices.append(p.choose_fills())
+        all_choices = {p: p.choose_fills() for p in self.players if p != curr_czar}
+        player_indexes = list(all_choices.keys())
 
         print(f"{curr_czar.name} - choose a winner from:")
-        for i, choices in enumerate(all_choices):
-            print(f"{i}: {DisplayBlankCard(curr_blank, choices.fills)}")
+        for i, choices in enumerate(all_choices.values()):
+            print(f"{i}: {curr_blank.fill(choices)}")
 
-        winner = all_choices[int(input())].player
+        winner = player_indexes[int(input())]
         print(f"{winner.name} wins this round")
         winner.points += 1
 

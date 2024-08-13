@@ -16,7 +16,7 @@ Jeg vil gerne udbring en skål! Til vores allesammens _
 Igår, da du sendte _ til min indbak'
 Ja, det rigtig godt! Kan du sige lidt mere om _
 _ er væltet. Og _ er på vej.
-Min lærer sagde at vi ikke måtte drikke _ på studieturen til _
+Min lærer sagde at vi ikke måtte drikke _ på studieturen
 Mit safeword er '_'
 Det der når man kommer til at vaske _ ved 60 grader, men ikke vidste at den kun tåler kemisk rens
 Højt på en gren _ sad
@@ -25,3 +25,6 @@ Shall I compare thee to _?
 At tænde natlampen betyder det er tid til _
 Vi skal redde _ fra tøjsnoren når det begynder at regne
 At pjække fra tysk og møde _ på vej ud
+All I want for christmas is _!
+Vi er på vej til dig, _!
+At melde sig til at samle _ op for at komme gratis til koncert
